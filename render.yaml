@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: youpi-pg
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm install
+    startCommand: npm run start:render
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 22.13.0
+      - key: NODE_ENV
+        value: production
+      - key: USE_SQLITE_FALLBACK
+        value: "true"
+      - key: SQLITE_DB_PATH
+        value: ./data/youpi_pg.sqlite
+      - key: ENCRYPTION_MASTER_KEY
+        generateValue: true
+      - key: ADMIN_API_TOKEN
+        generateValue: true
+      - key: JWT_SECRET
+        generateValue: true
+      - key: YOUPI_ALLOW_PRIVATE_WEBHOOKS
+        value: "true"

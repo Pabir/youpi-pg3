@@ -16,6 +16,7 @@
     "start": "node scripts/start.js",
     "start:prod": "node scripts/start.js",
     "start:prod:api": "node apps/payment-api/src/index.js",
+    "start:render": "node scripts/render-start.js",
     "dev": "node scripts/dev.js",
     "test": "node scripts/test-all.js",
     "test:all": "node scripts/test-all.js",
